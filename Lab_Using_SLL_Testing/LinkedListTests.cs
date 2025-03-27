@@ -3,13 +3,6 @@ using Lab_Using_SLL;
 
 namespace Lab_Using_SLL_Testing
 {
-
-
-    //Removing the last node in the list
-
-    //Retrieving the value of a node at a given index
-
-    //Determining the size of the list
     public class LinkedListTests
     {
         public LinkedList? tests;
@@ -24,7 +17,7 @@ namespace Lab_Using_SLL_Testing
 
             foreach (string name in names)
             {
-                tests.AddLast(name); // Adds names to the end of the list
+                tests.AddLast(name); // Populate the linked list with names
             }
         }
 
@@ -35,6 +28,7 @@ namespace Lab_Using_SLL_Testing
         }
 
         [Test]
+        // Test to add a new element to the beginning of the list
         public void Test_AddFirst()
         {
             tests?.AddFirst("New First");
@@ -44,6 +38,7 @@ namespace Lab_Using_SLL_Testing
         }
 
         [Test]
+        // Test to add a new element to the end of the list
         public void Test_AddLast()
         {
             tests?.AddLast("New Last");
@@ -54,6 +49,7 @@ namespace Lab_Using_SLL_Testing
         }
 
         [Test]
+        // Test to remove the first element from the list
         public void Test_RemoveFirst()
         {
             tests?.RemoveFirst();
@@ -63,6 +59,7 @@ namespace Lab_Using_SLL_Testing
         }
 
         [Test]
+        // Test to remove the last element from the list
         public void Test_RemoveLast()
         {
             tests?.RemoveLast();
@@ -72,6 +69,7 @@ namespace Lab_Using_SLL_Testing
         }
 
         [Test]
+        // Test to get value of a certain index
         public void Test_GetValue()
         {
             tests?.GetValue(0);
@@ -80,7 +78,22 @@ namespace Lab_Using_SLL_Testing
         }
 
         [Test]
-        public void RemoveFirst_ThrowsExceptionOnEmptyList()
+        // Test to determine the size of the list
+        public void Test_GetListSize()
+        {
+            Assert.That(tests?.Count, Is.EqualTo(7));
+        }
+
+        [Test]
+        // Test that an exception is thrown when trying to get the value of an index that is out of range
+        public void Test_GetValue_ThrowsExceptionOutOfRange()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => tests?.GetValue(10));
+        }
+
+        [Test]
+        // Test that an exception is thrown when trying to remove the first element from an empty list
+        public void Test_RemoveFirst_ThrowsExceptionOnEmptyList()
         {
             LinkedList emptyList = new LinkedList();
 
@@ -88,7 +101,8 @@ namespace Lab_Using_SLL_Testing
         }
 
         [Test]
-        public void RemoveLast_ThrowsExceptionOnEmptyList()
+        // Test that an exception is thrown when trying to remove the last element from an empty list
+        public void Test_RemoveLast_ThrowsExceptionOnEmptyList()
         {
             LinkedList emptyList = new LinkedList();
 
@@ -96,9 +110,12 @@ namespace Lab_Using_SLL_Testing
         }
 
         [Test]
-        public void GetValue_ThrowsExceptionForInvalidIndex()
+        // Test that an exception is thrown when trying to get the value of an index that is on an empty list
+        public void Test_GetValue_ThrowsExceptionOnEmptyList()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => tests?.GetValue(10));
+            LinkedList emptyList = new LinkedList();
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => emptyList.GetValue(0));
         }
-    }
-}
+    }// class
+}// namespace

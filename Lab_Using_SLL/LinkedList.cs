@@ -8,9 +8,11 @@ namespace Lab_Using_SLL
 {
     public class Node
     {
+        // public properties
        public string Value { get; set; }
         public Node? Next { get; set; }
 
+        // constructor
         public Node(string value)
         {
             Value = value;
@@ -18,15 +20,18 @@ namespace Lab_Using_SLL
     }
     public class LinkedList
     {
+        // public properties
         public Node? Head { get; private set; }
         public int Count { get; private set; }
 
+        // constructor
         public LinkedList() 
         {
             Head = null;
             Count = 0;
         }
 
+        // public methods
         public void AddFirst(string value)
         {
             Node newNode = new Node(value);
@@ -105,5 +110,5 @@ namespace Lab_Using_SLL
             }
             return current!.Value;
         }
-    }
-}
+    }// class
+}// namespace
