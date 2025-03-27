@@ -17,5 +17,5 @@ namespace Lab_Using_SLL
         {
             Value = value;
         }  
-    }
-}
+    }// class
+}// namespace
