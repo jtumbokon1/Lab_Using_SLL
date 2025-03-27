@@ -61,6 +61,10 @@ namespace Lab_Using_SLL
                 Head = Head.Next;
                 Count--;
             }
+            else
+            {
+                throw new InvalidOperationException();
+            }
         }
 
         public void RemoveLast()
@@ -74,8 +78,7 @@ namespace Lab_Using_SLL
                 else
                 {
                     Node current = Head;
-                    Node? next = current.Next;
-                    while (next.Next != null)
+                    while (current.Next!.Next != null)
                     {
                         current = current.Next;
                     }
@@ -83,20 +86,24 @@ namespace Lab_Using_SLL
                 }
                 Count--;
             }
+            else
+            {
+                throw new InvalidOperationException();
+            }
         }
 
-        public void GetValue(int index) 
+        public string GetValue(int index) 
         {
             if (index < 0 || index >= Count)
             {
-                throw new IndexOutOfRangeException();
+                throw new ArgumentOutOfRangeException();
             }
-            Node current = Head;
+            Node? current = Head;
             for (int i = 0; i < index; i++)
             {
-                current = current.Next;
+                current = current?.Next;
             }
-            Console.WriteLine(current.Value);
+            return current!.Value;
         }
     }
 }
