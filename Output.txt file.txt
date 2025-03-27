@@ -1,0 +1,42 @@
+Linked list after adding to first:
+New First
+Joe Blow
+Joe Schmoe
+John Smith
+Jane Doe
+Bob Bobberson
+Sam Sammerson
+Dave Daverson
+
+Linked list after adding to last:
+New First
+Joe Blow
+Joe Schmoe
+John Smith
+Jane Doe
+Bob Bobberson
+Sam Sammerson
+Dave Daverson
+New Last
+
+Linked list after removing first:
+Joe Blow
+Joe Schmoe
+John Smith
+Jane Doe
+Bob Bobberson
+Sam Sammerson
+Dave Daverson
+New Last
+
+Linked list after removing last:
+Joe Blow
+Joe Schmoe
+John Smith
+Jane Doe
+Bob Bobberson
+Sam Sammerson
+Dave Daverson
+
+Retrieving the value of a given index:
+Jane Doe
